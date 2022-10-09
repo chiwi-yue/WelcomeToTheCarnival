@@ -10,7 +10,7 @@ const giftList = {
     7: {"Skateboard": 100},
     8: {"Toy Car": 25},
     9: {"Basketball": 20},
-    10: {"Scary Mask": 10}
+    10: {"Scary Mask": 75}
 };
 
 function welcomeToCarnival () {
