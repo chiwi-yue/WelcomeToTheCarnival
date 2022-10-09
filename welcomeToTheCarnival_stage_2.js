@@ -1,4 +1,4 @@
-// Work on project. Stage 1/5: Welcome to the carnival!
+// Work on project. Stage 2/5: Welcome to the carnival!
 
 const giftList = {
     1: {"Teddy Bear": 10},
