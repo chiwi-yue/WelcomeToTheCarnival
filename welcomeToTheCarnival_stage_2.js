@@ -15,8 +15,14 @@ const giftList = {
 
 function welcomeToCarnival () {
     console.log(`WELCOME TO THE CARNIVAL GIFT SHOP!\nHello friend! Thank you for visiting the carnival!\nHere's the list of gifts:\n`);
-    for(let i in giftList) {
-        console.log(giftList[i]);
+    for(let orderID in giftList) {
+        let giftName;
+        let giftPrice;
+        for(let giftKey in giftList[orderID]) {
+            giftName = giftKey;
+            giftPrice = giftList[orderID][giftKey];
+        }
+        console.log(`${orderID}- ${giftName}, Cost: ${giftPrice} tickets`);
     }
 }
 
