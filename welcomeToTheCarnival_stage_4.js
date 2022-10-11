@@ -2,7 +2,7 @@
 
 const input = require('sync-input');
 
-const giftList = {
+let giftList = {
     1: {"Teddy Bear": 10},
     2: {"Big Red Ball": 5},
     3: {"Huge Bear": 50},
@@ -71,6 +71,7 @@ function buyGift() {
         console.log(`Here you go, one ${giftName}!`);
         userTickets -= giftChoice[giftName];
     }
+    delete giftList[numberGift];
     checkTicket();
 }
 
@@ -79,7 +80,7 @@ function checkTicket() {
 }
 
 function displayEndMessage() {
-    console.log(`Have a nice day!`);
+    console.log(`Have a nice day!\n\nProcess finished with exit code 0`);
 }
 
 function addTicket() {
