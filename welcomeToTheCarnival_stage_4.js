@@ -1,4 +1,4 @@
-// Stage 3/5: What visitor wants
+// Stage 4/5: Can you repeat?
 
 const input = require('sync-input');
 
@@ -15,7 +15,7 @@ const giftList = {
     10: {"Scary Mask": 75}
 };
 
-let userTickets = 100;
+let userTickets = 0;
 
 function welcomeToCarnival() {
     console.log(`WELCOME TO THE CARNIVAL GIFT SHOP!\nHello friend! Thank you for visiting the carnival!`);
@@ -35,26 +35,33 @@ function showGift() {
     }
 }
 
+
 function makeChoice() {
-    console.log();
-    console.log(`What do you want to do?`);
-    let userChoice = Number(input(`1-Buy a gift 2-Add tickets 3-Check tickets 4-Show gifts\n`).trim());
-    switch (userChoice) {
-        case 1:
-            buyGift();
-            break;
-        case 2:
-            addTicket();
-            break;
-        case 3:
-            checkTicket();
-            break;
-        case 4:
-            showGift();
-            break;
-        default:
-            break;
+    do {
+        console.log();
+        console.log(`What do you want to do?`);
+        userChoice = Number(input(`1-Buy a gift 2-Add tickets 3-Check tickets 4-Show gifts 5-Exit the shop\n`).trim());
+        switch (userChoice) {
+            case 1:
+                buyGift();
+                break;
+            case 2:
+                addTicket();
+                break;
+            case 3:
+                checkTicket();
+                break;
+            case 4:
+                showGift();
+                break;
+            case 5:
+                break;
+            default:
+                makeChoice();
+                break;
+        }  
     }
+    while (userChoice != 5);
 }
 
 function buyGift() {
@@ -81,11 +88,6 @@ function addTicket() {
     checkTicket();
 }
 
-// welcomeToCarnival();
-// showGift();
-// makeChoice();
-// displayEndMessage();
-
 function main() {
     welcomeToCarnival();
     showGift();
@@ -94,3 +96,4 @@ function main() {
 }
     
 main();
+
